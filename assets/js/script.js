@@ -31,7 +31,6 @@ const createNote = () => {
   return li;
 };
 
-// Helper function to create buttons
 const createButton = (text, className, onClick) => {
   const button = document.createElement('button');
   button.className = `btn ${className}`;
