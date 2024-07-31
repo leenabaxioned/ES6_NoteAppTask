@@ -1,54 +1,49 @@
-/* Author: */
+// Function to create a new note element
 const createNote = () => {
-  // Create the main list item
   const li = document.createElement('li');
+  li.className = 'note-item';
 
-  // Create and append the action buttons
+  // Create the note actions container
   const noteActions = document.createElement('div');
   noteActions.className = 'note-actions';
-
-  const editButton = document.createElement('button');
-  editButton.className = 'edit-btn btn';
-  editButton.textContent = 'Edit';
   
-  const saveButton = document.createElement('button');
-  saveButtonButton.className = 'edit-btn btn';
-  saveButton.textContent = 'Save';
+  const editButton = createButton('Edit', 'edit-btn', () => {
+    textarea.disabled = false;
+    toggleButtonVisibility(editButton, saveButton);
+  });
+
+  const saveButton = createButton('Save', 'edit-btn', () => {
+    textarea.disabled = true;
+    toggleButtonVisibility(saveButton, editButton);
+  });
   saveButton.style.display = 'none';
 
-  const deleteButton = document.createElement('button');
-  deleteButton.className = 'delete-btn btn';
-  deleteButton.textContent = 'Delete';
-
-  // Add event listeners
-  editButton.addEventListener('click', () => {
-      textarea.disabled = false;
-      editButton.style.display = 'none';
-      saveButton.style.display = 'inline-block';
+  const deleteButton = createButton('Delete', 'delete-btn', () => {
+    li.remove();
   });
 
-  saveButton.addEventListener('click', () => {
-      textarea.disabled = true;
-      editButton.style.display = 'inline-block';
-      saveButton.style.display = 'none';
-  });
-
-  deleteButton.addEventListener('click', () => {
-      li.remove();
-  });
-
-  noteActions.appendChild(editButton);
-  noteActions.appendChild(saveButton);
-  noteActions.appendChild(deleteButton);
+  noteActions.append(editButton, saveButton, deleteButton);
   li.appendChild(noteActions);
 
-  // Create and append the textarea
   const textarea = document.createElement('textarea');
-  textarea.placeholder = 'Write your note here...';
-  textarea.disabled = true; // Initially disable textarea
+  textarea.disabled = true;
   li.appendChild(textarea);
-
   return li;
+};
+
+// Helper function to create buttons
+const createButton = (text, className, onClick) => {
+  const button = document.createElement('button');
+  button.className = `btn ${className}`;
+  button.textContent = text;
+  button.addEventListener('click', onClick);
+  return button;
+};
+
+// Helper function to toggle button visibility
+const toggleButtonVisibility = (hideButton, showButton) => {
+  hideButton.style.display = 'none';
+  showButton.style.display = 'inline-block';
 };
 
 // Add event listener to the "Add New Note" button
