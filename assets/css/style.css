@@ -114,10 +114,11 @@ li {
 /*=================================
   main styling starts here
 =================================*/
-.main .wrapper {
+.main .wrapper { margin: 20px 0; }
+
+.main-notebtn {
   display: flex;
   justify-content: flex-end;
-  margin: 20px 0;
 }
 
 .add {
@@ -131,6 +132,7 @@ li {
   color: #fff;
   font-size: 13px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .add::before {
@@ -141,30 +143,27 @@ li {
   font-weight: 600;
 }
 
-ul { padding: 20px 0; }
+ul { 
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 20px 0; 
+}
 
 li {
   position: relative;
+  padding: 10px;
   background-color: #fff;
   border: 1px solid transparent;
   margin-bottom: 10px;
-  padding: 10px;
 }
 
 .note-actions {
   display: flex;
   justify-content: flex-end;
+  padding: 5px;
   margin-bottom: 10px;
-}
-
-.note-actions button {
   background-color: #9ec862;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin-left: 5px;
-  cursor: pointer;
 }
 
 .note-actions button.delete-btn { background-color: #9ec862; }
@@ -177,6 +176,23 @@ textarea {
   padding: 10px;
   resize: none;
 }
+
+.btn {
+  display: flex;
+  text-indent: -9999px;
+}
+
+.btn::before {
+  font-family: "FontAwesome";
+  color: #fff;
+  font-size: 15px;
+  text-indent: 0;
+  cursor: pointer;
+}
+
+.edit-btn::before,
+.save-btn::before { content: "\f044";}
+.delete-btn::before { content: "\f2ed";}
 /*=================================
   main styling ends here
 =================================*/
