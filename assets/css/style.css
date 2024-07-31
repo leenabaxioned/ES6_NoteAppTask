@@ -141,6 +141,42 @@ li {
   font-weight: 600;
 }
 
+ul { padding: 20px 0; }
+
+li {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid transparent;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.note-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.note-actions button {
+  background-color: #9ec862;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.note-actions button.delete-btn { background-color: #9ec862; }
+.note-actions button:hover { opacity: 0.8; }
+
+textarea {
+  width: calc(100% - 50px);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  resize: none;
+}
 /*=================================
   main styling ends here
 =================================*/
