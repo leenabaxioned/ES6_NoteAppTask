@@ -84,6 +84,7 @@ sub { bottom: -.25em; }
 body {
   box-sizing: border-box;
   font-family: sans-serif;
+  background-color: #7bdaf3; 
 }
 
 a { 
@@ -99,7 +100,7 @@ li {
 /*for wrapper*/
 .wrapper {
   max-width: 1360px;
-  width: 86%; 
+  width: 98%; 
   margin: 0 auto;
 }
 /*=================================
@@ -113,6 +114,32 @@ li {
 /*=================================
   main styling starts here
 =================================*/
+.main .wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0;
+}
+
+.add {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding: 3px 12px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #9ec862;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.add::before {
+  font-family: "FontAwesome";
+  content: "\2b";
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
 
 /*=================================
   main styling ends here
